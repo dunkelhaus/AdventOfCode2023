@@ -1,11 +1,8 @@
 def matches(line):
     div = line.split("|")
-    win_str = div[0].split(":")[1].strip()
-    my_str = div[1].strip()
-    winners = win_str.split(" ")
-    my = my_str.split(" ")
-    winset = {int(i) for i in winners if i}
-    myset = {int(i) for i in my if i}
+    win_str = div[0].split(":")[1]
+    winset = set(win_str.split())
+    myset = set(div[1].split())
     count = len(set(winset).intersection(myset))
 
     return count
